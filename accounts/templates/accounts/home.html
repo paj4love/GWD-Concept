@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+<h1>This is Home page</h1>
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% load static %}
+{% block body %}
+        <div class="container">
+                    <!-- Section heading -->
+                    <h2> {{ user }}</h2>
+                    <h2 class="h1-responsive font-weight-bold my-5">Welcome to GWD Code Club</h2>
+                    <hr class="my-5">
+                    <p class="black-text w-responsive mx-auto mb-5" style="text-align:center; font-size:x-large;">GWD Code Club is a network of coding clubs for children of ages 8-18.</p>
+                    <hr class="my-5">
+
+                    <!-- Grid row -->
+        <div class="row">
+                <div class="col s12 m12 l12">
+                        <div class="card large">
+                            <img class="responsive-img" src="{% static 'accounts/images/front.jpg' %}">
+                        </div>
+                </div>
+        </div>
+
+                <!-- Section: Magazine v.3 -->
+                <section class="magazine-section my-5">
+                    <br>
+                    <!-- Section heading -->
+                    <h2 class="h1-responsive font-weight-bold text-center my-5">Get Involved!</h2>
+                    <hr class="my-5">
+                    <p class="text-left w-responsive mx-auto mb-5">We live in a digital age, therefore the knowledge of some of these basic IT skills such as computer programming (coding), app development and web development makes one stay relevant in the 21st century. The demand for these and other technical skills will only grow bigger. So it becomes imperative to expose pupils and students to basic IT skills early enough to give them an edge in this highly competitive computer age.</p>
+                    <br>
+                    <!-- Grid row -->
+                    <div class="row">
+                        <div class="col s3">
+                
+                            <!-- Image -->
+                            <div class="view overlay rounded z-depth-2 mb-3" style="background-color:chartreuse;">
+                                <img class="responsive-img" src="{% static 'accounts/images/facilitators.png' %}" alt="Sample image">
+                                <a>
+                                <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+                        </div>
+    
+                        <div class="col s3">
+                
+                        <!-- Image -->
+                        <div class="view overlay rounded z-depth-2 mb-3" style="background-color:cyan;">
+                            <img class="responsive-img" src="{% static 'accounts/images/schools.png' %}" alt="Sample image">
+                            <a>
+                            <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        </div>
+
+                            <div class="col s3">
+                    
+                            <!-- Image -->
+                            <div class="view overlay rounded z-depth-2 mb-3" style="background-color:#304ffe;">
+                                <img class="responsive-img" src="{% static 'accounts/images/computers.png' %}" alt="Sample image">
+                                <a>
+                                <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+    
+                            </div>
+                            
+                        <div class="col s3">
+                
+                        <!-- Image -->
+                        <div class="view overlay rounded z-depth-2 mb-3" style="background-color:#fdd835;">
+                            <img class="responsive-img" src="{% static 'accounts/images/pupils2.png' %}" alt="Sample image">
+                            <a>
+                            <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        </div>
+                        <!-- Featured news -->
+                    </div>
+                    <!-- Grid column -->
+                
+                </section>
+                <!-- Section: Magazine v.3 -->
+
+        <div class="section">
+
+                <h2 class="h1-responsive font-weight-bold text-center my-5">Why Code Club?</h2>
+                <br>
+                <hr class="my-5">
+
+                <div class="row">
+                        <div class="col s12 m6 l6">
+                            <img  class="responsive-img" src="{% static 'accounts/images/SCHOOL.jpg' %}" alt="Sample project image">
+                        </div>
+    
+                    <div class="col s12 m6 l6">
+                
+                            <div class="col s12">
+                                <a class="btn  red lighten-1"><span>Education</span><i class="material-icons right">school</i></a>
+                                <p class="grey-text">It’s no secret that coding helps kids develop skills they need to be successful in school, e.g “critical thinking” It’s a concept that includes several key steps—which is great because, just like any skill set, critical thinking can be developed with practice. As they code, Kids learn what happens when a given set of blocks is combined or altered.</p>
+                            </div>
+                
+                            <div class="col s12">
+                                <a class="btn pink darken-3"><span>innovation</span><i class="material-icons right">memory</i></a>
+                                <p class="grey-text">Like critical thinking, creativity brings innovation, that is a skill that can be developed! One of the key steps in the creative process is experimentation. With Tynker or Scratch, kids can test out their imaginative ideas!.</p>
+                            </div>
+                    </div>
+                </div>
+        <!-- Grid row -->            
+        </div>
+
+        <div class="section">
+                            
+            <hr class="my-5">
+            
+            <div class="row">
+                <div class="col s12 m6 l6">
+                
+                        <div class="col s12">
+                            <a class="btn  yellow darken-1"><span>Oollaboration</span><i class="material-icons right">collections</i></a>
+                            <p class="grey-text">While it’s important to have “alone time” while working on a coding project, much can be gained—and given—when kids team up with others, they demonstrate resilience and improve their coding skills while learning how to collaborate with others</p>
+                        </div>
+                
+                        <div class="col s12">
+                            <a class="btn green darken-1"><span>communication</span><i class="material-icons right">comment</i></a>
+                            <p class="grey-text mb-0">Dynamic communication that uses a variety of media is becoming increasingly common in today’s society. Kids need to learn how to stand up in front of other people and articulate their ideas and how to use digital tools to share information and there tell stories.</p>
+                        </div>
+                    
+                </div>
+
+                <div class="col s12 m6 l6">
+                        <img class="responsive-img" src="{% static 'accounts/images/quiz-2.jpg' %}" alt="Sample project image">
+                </div>
+            </div>
+ 
+               
+        </div>
+        </div>
+{% endblock %}

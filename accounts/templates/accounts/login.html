@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+<br>
+<div class="container">
+
+    <div class="row">
+       <div class="carousel carousel-slider">
+        <a class="carousel-item" href="#one!"><img src="{% static 'accounts/images/SCHOOL.jpg' %}"></a>
+        <a class="carousel-item" href="#two!"><img src="{% static 'accounts/images/engage.png' %}"></a>
+        <a class="carousel-item" href="#three!"><img src="{% static 'accounts/images/child.png' %}"></a>
+    </div>
+
+    <div class="col s12 m12 center-align">
+      <div class="card green darken-4">
+        <div class="card-content white-text">
+          <span class="card-title">Welcome to GWD Code Club</span>
+          <p>Sign to view this site if you are a registered memeber, otherwise register for a free account now!</p>
+        </div>
+      </div>
+  </div>
+
+      <br>
+      <section>
+          <h2 class="center-align">Login</h2>
+          
+          <form class="col s12" method="POST">
+            <div class="input-field col s12 l4 offset-l4">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <div class="input-field col s12 l4 offset-l4">
+                <button class="btn waves-effect deep-orange darken-3" type="submit" name="action">Login
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+              
+          </form>
+          <div class="input-field col s12 l4 offset-l4">
+              <small class="card-text center-align">
+                  Need An Account? <a href="/account/register">Sign Up Now</a>
+            </small>
+          </div>
+      </section>
+
+      </div>
+      </div>
+{% endblock %}
+          

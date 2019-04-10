@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+<h1>This is our contact page</h1>
+{% block head %}
+<title>Contact Us</title>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="container">
+      <section class="my-5">
+
+          <div class="col s12 m2 l2">
+
+          </div>
+
+          <div class="col s12 m8 l8 center-align">
+              <h2 class="h1-responsive font-weight-bold text-center my-5">Contact Us</h2>
+             
+              <p class="text-center w-responsive mx-auto mb-5">For informations or surgestions, partnership and sponsorship please you can call or send us a message, thanks
+              </p>
+              <div class="row">            
+                  <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                      <form class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12 l4 offset-l4">
+                            <input id="input_text" type="text" name="Subject"  data-length="10">
+                            <label for="input_text">Subject</label>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-field col s12 l4 offset-l4">
+                            <input id="email" type="email" name="from_email" class="validate">
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                          </div>
+                        </div>
+                    
+                    <div class="row">
+                      <div class="input-field col s12 l4 offset-l4">
+                        <textarea id="textarea2" class="materialize-textarea" name="message" data-length="120"></textarea>
+                        <label for="textarea2">Textarea</label>
+                      </div>
+                    </div>
+
+                    <div class="input-field col s12 l4 offset-l4">
+                      <button class="btn waves-effect deep-orange darken-3" type="submit" name="action">Send
+                          <i class="material-icons right">send</i>
+                      </button>
+                  </div>
+
+                  </form>
+
+                  <br>
+                  <section>
+                    <br>
+                    <br>
+                      <div class="col-md-3 text-center">
+                          <ul class="list-unstyled mb-0">
+                            <li>
+                              <i class="fas fa-map-marker-alt fa-2x blue-text"></i>
+                              <p> Abuja, Sabon-Lugbe, Airport Road. Nigeria</p>
+                            </li>
+                            <li>
+                              <i class="fas fa-phone fa-2x mt-4 blue-text"></i>
+                              <p>+ 234 0902 997 7855</p>
+                              <p>+ 234 0810 614 6410</p>
+                            </li>
+                            <li>
+                              <i class="fas fa-envelope fa-2x mt-4 blue-text"></i>
+                              <p class="mb-0">info@gwdconcept.com.ng</p>
+                            </li>
+                          </ul>
+                        </div>
+                  </section>
+            
+              </div>
+            </div>
+          <div class="col s12 m2 l2">
+              <div class="col-md-4">
+
+              </div>
+          </div>
+      </section>
+</div>
+{% endblock %}

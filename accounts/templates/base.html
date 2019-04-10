@@ -1,0 +1,149 @@
+{% load static %}
+<html>
+    <head>
+        <link href="{% static 'stylesheet/accounts/style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-social@1.0.3/materialize-social.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-social@1.0.3/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        {% block head %}
+        <meta charset="utf-8">
+        <title>GWD Code Club</title>
+        {% endblock %}
+    </head>
+    <body>
+        <br>
+        <nav>
+            <div class="nav-wrapper green darken-3">
+              <div class="container">
+                  <a href="#" class="brand-logo">Logo</a>
+                  <a href="#" class="sidenav-trigger" data-target="slide-out">
+                    <i class="material-icons">menu</i>
+                  </a>
+                  <ul class="right hide-on-med-and-down">
+                    {% if user.is_authenticated %}
+                    <li><a href="/account/">Home</a></li>
+                    <li><a href="/account/profile">Profile</a></li>
+                    <li><a href="/account/program">Programs</a></li>
+                    <li><a href="/account/logout">Logout</a></li>
+                    {% else %}
+                    <li><a href="/">Login</a></li>
+                    <li><a href="/account/register">Register</a></li>
+                    <li><a href="/account/contact">Contact Us</a></li>
+                  </ul>
+              </div>
+            {% endif %}
+            </div>
+          </nav>
+          <ul id="slide-out" class="sidenav">
+              <li><div class="user-view">
+                  <div class="background">
+                    <img class="responsive-img"  src="{% static 'accounts/images/sidenav-background.jpg' %}">
+                  </div>
+                  <a href="#user"><img class="circle" src="{{ user.userprofile.image.url }}" width="50"></a>
+                  <a href="#name"><span class="white-text name">{{ user }}</span></a>
+                  <a href="#email"><span class="white-text email">{{ user.email }}</span></a>
+                </div></li>
+            {% if user.is_authenticated %}
+            <li><a href="/account/"><i class="material-icons">home</i>Home</a></li>
+            <li><a href="/account/profile"><i class="material-icons">person</i>Profile</a></li>
+            <li><a href="/account/program"><i class="material-icons">cloud</i>Programs</a></li>
+            <li><a href="/account/logout"><i class="material-icons">eject</i>Logout</a></li>
+            {% else %}
+            <li><a href="/"><i class="material-icons">link</i>Login</a></li>
+            <li><a href="/account/register"><i class="material-icons">thumb_up</i>Register</a></li>
+            <li><a href="/account/contact"><i class="material-icons">contacts</i>Contact Us</a></li>
+            {% endif %}
+          </ul>
+        <br>
+        <div class="container">
+
+                        <div class="col s12 center-align">
+
+                            <a href="https://web.facebook.com/GWD-Code-Club-299699390653223/?modal=admin_todo_tour" class="waves-effect waves-light btn-floating btn-large social facebook">
+                                <i class="fab fa-Facebook-f"></i> Sign in with facebook</a>
+                  
+                            <a href="https://twitter.com/ClubGwd" class="waves-effect waves-light btn-floating btn-large social twitter">
+                                <i class="fab fa-twitter"></i> Sign in with twitter</a>
+                  
+                            <a href="https://www.instagram.com/gwdconcept/" class="waves-effect waves-light btn-floating btn-large social instagram">
+                                <i class="fab fa-instagram"></i> Sign in with instagram</a>
+                                
+                            <a href="#" class="waves-effect waves-light btn-floating btn-large social youtube">
+                                <i class="fab fa-youtube"></i> Sign in with youtube</a>
+                        </div>
+        </div>
+
+
+          </div>
+        {% block body %}
+
+        {% endblock %}
+        <br>
+        <footer class="page-footer green darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 l6">
+                <h5>About Us</h5>
+                <p>GWD Code Club is a platform where children can uptimize their potencial and size opportunity, onnovation coding/programming brings to the development of our society and educational development</p>
+                <p>
+                  Our goal for this program is to create an avenue (platform) that will continue to promote our children educational development by equipping them with requiste skills and career preparation. this program which is 90% practical computational thinking, creativity and thinking fluidity, and it will improve academic performance.
+                </p>
+              </div>
+              <div class="col s12 l3 offset-l3">
+                <section>
+                    <div class="container">
+                          <div class="row">
+                               
+                                  <h5 class="white-text">Get Involved</h5>
+                                  <ul>
+                                    <li><a class="grey-text text-lighten-3" href="/">Signin</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="#!">Parents</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="#!">FAQs</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="#!">Private Policy</a></li>
+                                  </ul>
+                                
+                          </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-copyright green darken-3">
+              <div class="container center-align">
+                &copy; 2019 GWD Concept
+              </div>
+          </div>
+          </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $('.sidenav').sidenav();
+            })
+
+            var instance = M.Carousel.init({
+              fullWidth: true
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function(){
+            var carousel_interval = 4000;
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
+            var int;
+            function run(){
+                int = setInterval(function()
+                { 
+                    $('.carousel.carousel-slider').carousel('next');
+                }, carousel_interval);
+            }
+            function stop(){
+            clearInterval(int);
+            }
+            $('.carousel.carousel-slider').hover(stop, run);     
+            }); 
+        </script>
+    </body>
+</html>
